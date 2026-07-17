@@ -117,6 +117,10 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 600; letter-spacing: -.01
 .work.niquel .swatch { background: radial-gradient(circle at 32% 30%, #f2ecdc, #a89e8a 58%, #4d4538); }
 .work.cromo .swatch  { background: radial-gradient(circle at 32% 30%, #ffffff, #9fb3d1 45%, #1d2532); }
 .work.zinco .swatch  { background: radial-gradient(circle at 32% 30%, #c7dde8, #6f8794 58%, #28353d); }
+.work.gunmetal .swatch    { background: radial-gradient(circle at 32% 30%, #9aa3b5, #4a5160 58%, #14171d); }
+.work.brancobronze .swatch { background: radial-gradient(circle at 32% 30%, #faf4e4, #c9bfa5 58%, #6b6250); }
+.work.oxid .swatch        { background: radial-gradient(circle at 32% 30%, #7d6a56, #2e2620 58%, #0a0806); }
+.work.oxid { grid-column: 1 / -1; }
 .label .name { font-family: "Didot", "Bodoni 72", "Bodoni MT", Georgia, serif; font-size: 26px; margin-bottom: 8px; }
 .label p { font-size: 14px; color: var(--ink-soft); margin-bottom: 12px; }
 .label .app { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--m-mid); }
