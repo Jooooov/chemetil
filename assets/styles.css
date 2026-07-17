@@ -112,9 +112,11 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 600; letter-spacing: -.01
   animation: turn 10s linear infinite; }
 @keyframes turn { to { transform: rotate(360deg); } }
 .work.ouro .swatch   { background: radial-gradient(circle at 32% 30%, #f3d98b, #b8860b 58%, #6e4f06); }
-.work.niquel .swatch { background: radial-gradient(circle at 32% 30%, #e9edf1, #9aa3ad 58%, #4d545c); }
-.work.cromo .swatch  { background: radial-gradient(circle at 32% 30%, #ffffff, #aeb8c2 45%, #2f353c); }
-.work.zinco .swatch  { background: radial-gradient(circle at 32% 30%, #d7dde2, #8f9aa4 58%, #3c434b); }
+.work.cobre .swatch  { background: radial-gradient(circle at 32% 30%, #ffb380, #b87333 58%, #52260f); }
+.work.bronze .swatch { background: radial-gradient(circle at 32% 30%, #eccd8c, #9a7338 58%, #45320f); }
+.work.niquel .swatch { background: radial-gradient(circle at 32% 30%, #f2ecdc, #a89e8a 58%, #4d4538); }
+.work.cromo .swatch  { background: radial-gradient(circle at 32% 30%, #ffffff, #9fb3d1 45%, #1d2532); }
+.work.zinco .swatch  { background: radial-gradient(circle at 32% 30%, #c7dde8, #6f8794 58%, #28353d); }
 .label .name { font-family: "Didot", "Bodoni 72", "Bodoni MT", Georgia, serif; font-size: 26px; margin-bottom: 8px; }
 .label p { font-size: 14px; color: var(--ink-soft); margin-bottom: 12px; }
 .label .app { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--m-mid); }
