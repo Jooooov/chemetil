@@ -106,6 +106,7 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 600; letter-spacing: -.01
 .works { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; margin-top: 56px; }
 .work { display: grid; grid-template-columns: 150px 1fr; gap: 26px; align-items: center; border: 1px solid var(--line); padding: 26px; background: var(--bg2); transition: border-color .4s, transform .4s; }
 .work:hover { border-color: rgba(235,230,218,.35); transform: translateY(-3px); }
+.swatch3d { width: 150px; height: 150px; display: block; margin: 0 auto; cursor: grab; }
 .swatch { width: 150px; height: 150px; border-radius: 50%; position: relative; }
 .swatch::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
   background: linear-gradient(130deg, rgba(255,255,255,.5), transparent 38%, transparent 62%, rgba(255,255,255,.16));

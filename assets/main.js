@@ -207,3 +207,106 @@
   }
   requestAnimationFrame(frame);
 })();
+
+/* ---------- peças de metal 3D na galeria ---------- */
+(function () {
+  'use strict';
+  var RF = {
+    ouro:   { dk:[0.23,0.16,0.04], mid:[0.83,0.66,0.26], hi:[0.99,0.91,0.55] },
+    cobre:  { dk:[0.26,0.11,0.05], mid:[0.72,0.45,0.20], hi:[1.00,0.72,0.52] },
+    bronze: { dk:[0.16,0.11,0.05], mid:[0.49,0.33,0.15], hi:[0.85,0.66,0.42] },
+    niquel: { dk:[0.14,0.13,0.11], mid:[0.66,0.62,0.54], hi:[0.95,0.93,0.86] },
+    cromo:  { dk:[0.05,0.07,0.11], mid:[0.62,0.70,0.82], hi:[1.00,1.00,1.00] },
+    zinco:  { dk:[0.09,0.12,0.14], mid:[0.44,0.53,0.58], hi:[0.78,0.87,0.91] },
+    gunmetal:     { dk:[0.05,0.06,0.09], mid:[0.29,0.32,0.38], hi:[0.72,0.77,0.86] },
+    brancobronze: { dk:[0.28,0.25,0.20], mid:[0.79,0.75,0.65], hi:[0.98,0.96,0.89] },
+    oxid:         { dk:[0.03,0.02,0.02], mid:[0.18,0.15,0.13], hi:[0.52,0.44,0.36] }
+  };
+  function torus(R, r, nu, nv) {
+    var pos = [], nor = [], idx = [];
+    for (var i = 0; i <= nu; i++) {
+      var u = i / nu * Math.PI * 2, cu = Math.cos(u), su = Math.sin(u);
+      for (var j = 0; j <= nv; j++) {
+        var v = j / nv * Math.PI * 2, cv2 = Math.cos(v), sv = Math.sin(v);
+        pos.push((R + r * cv2) * cu, (R + r * cv2) * su, r * sv);
+        nor.push(cv2 * cu, cv2 * su, sv);
+      }
+    }
+    for (i = 0; i < nu; i++) for (var j2 = 0; j2 < nv; j2++) {
+      var a = i * (nv + 1) + j2, b = a + nv + 1;
+      idx.push(a, b, a + 1, b, b + 1, a + 1);
+    }
+    return { pos: new Float32Array(pos), nor: new Float32Array(nor), idx: new Uint16Array(idx) };
+  }
+  var MESH = torus(0.62, 0.3, 56, 28);
+  var VS = 'attribute vec3 p; attribute vec3 n; uniform mat3 rot; varying vec3 vn;' +
+    'void main(){ vec3 q = rot * p; vn = rot * n; gl_Position = vec4(q.xy * 0.85, q.z * 0.25, 1.0); }';
+  var FS = 'precision mediump float; varying vec3 vn; uniform vec3 dk; uniform vec3 mid; uniform vec3 hi;' +
+    'void main(){ vec3 n = normalize(vn); vec3 v = vec3(0.0,0.0,1.0);' +
+    'vec3 l1 = normalize(vec3(0.5,0.7,0.6));' +
+    'float sp1 = pow(max(dot(reflect(-l1,n),v),0.0), 110.0);' +
+    'float fres = pow(1.0-max(dot(n,v),0.0), 2.8);' +
+    'vec3 r = reflect(-v, n);' +
+    'float m2 = 2.0*sqrt(r.x*r.x + r.y*r.y + (r.z+1.0)*(r.z+1.0));' +
+    'vec2 muv = r.xy/m2 + 0.5;' +
+    'float sky = smoothstep(0.34, 0.78, muv.y);' +
+    'float st1 = exp(-pow((muv.y-0.70)*9.0, 2.0));' +
+    'float st2 = exp(-pow((muv.y-0.34)*15.0, 2.0));' +
+    'float st3 = exp(-pow((muv.x-0.24)*11.0, 2.0))*0.35;' +
+    'vec3 col = mix(dk*0.65, mid, 0.2 + 0.62*sky);' +
+    'col = mix(col, dk*0.45, smoothstep(0.30, 0.04, muv.y)*0.65);' +
+    'col += hi*(st1*0.95 + st2*0.4 + st3);' +
+    'col += sp1*hi*1.3 + fres*hi*0.35;' +
+    'col = pow(col, vec3(0.9));' +
+    'gl_FragColor = vec4(col, 1.0); }';
+  function mat3rot(ax, ay) {
+    var cx = Math.cos(ax), sx = Math.sin(ax), cy = Math.cos(ay), sy = Math.sin(ay);
+    return new Float32Array([cy, 0, -sy, sx * sy, cx, sx * cy, cx * sy, -sx, cx * cy]);
+  }
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('canvas.swatch3d').forEach(function (cv) {
+    var gl = cv.getContext('webgl', { antialias: true });
+    var f = RF[cv.dataset.f];
+    if (!gl || !f) { cv.style.background = 'radial-gradient(circle at 32% 30%, #777, #333)'; cv.style.borderRadius = '50%'; return; }
+    function sh(t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; }
+    var pr = gl.createProgram();
+    gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS));
+    gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS));
+    gl.linkProgram(pr); gl.useProgram(pr);
+    function buf(t, d) { var b = gl.createBuffer(); gl.bindBuffer(t, b); gl.bufferData(t, d, gl.STATIC_DRAW); return b; }
+    buf(gl.ARRAY_BUFFER, MESH.pos);
+    var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 3, gl.FLOAT, false, 0, 0);
+    buf(gl.ARRAY_BUFFER, MESH.nor);
+    var ln = gl.getAttribLocation(pr, 'n'); gl.enableVertexAttribArray(ln); gl.vertexAttribPointer(ln, 3, gl.FLOAT, false, 0, 0);
+    buf(gl.ELEMENT_ARRAY_BUFFER, MESH.idx);
+    gl.uniform3fv(gl.getUniformLocation(pr, 'dk'), f.dk);
+    gl.uniform3fv(gl.getUniformLocation(pr, 'mid'), f.mid);
+    gl.uniform3fv(gl.getUniformLocation(pr, 'hi'), f.hi);
+    var uRot = gl.getUniformLocation(pr, 'rot');
+    gl.enable(gl.DEPTH_TEST);
+    gl.viewport(0, 0, cv.width, cv.height);
+    gl.clearColor(0, 0, 0, 0);
+    var ax = 0.9, ay = 0, vx = 0, vy = 0.008, drag = null, visible = false, raf = null;
+    cv.addEventListener('mousedown', function (e) { e.preventDefault(); drag = [e.clientX, e.clientY]; cv.style.cursor = 'grabbing'; });
+    window.addEventListener('mouseup', function () { drag = null; cv.style.cursor = 'grab'; });
+    window.addEventListener('mousemove', function (e) {
+      if (!drag) return;
+      vy = (e.clientX - drag[0]) * 0.004; vx = (e.clientY - drag[1]) * 0.004;
+      drag = [e.clientX, e.clientY];
+    });
+    function frame() {
+      raf = null;
+      ax += vx; ay += vy;
+      if (!drag) { vx *= 0.95; vy = vy * 0.95 + 0.008 * 0.05; }
+      gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+      gl.uniformMatrix3fv(uRot, false, mat3rot(ax, ay));
+      gl.drawElements(gl.TRIANGLES, MESH.idx.length, gl.UNSIGNED_SHORT, 0);
+      if (visible && !reduced) raf = requestAnimationFrame(frame);
+    }
+    new IntersectionObserver(function (en) {
+      visible = en[0].isIntersecting;
+      if (visible && !raf) raf = requestAnimationFrame(frame);
+    }, { threshold: 0.05 }).observe(cv);
+    frame();
+  });
+})();
