@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chemetil — Engenharia de Superfícies</title>
+<meta name="description" content="Diagnóstico de banhos galvânicos, formulação e química técnica. Acabamentos que são arte.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚗️</text></svg>">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="art" id="hero">
+  <canvas id="gl"></canvas>
+  <div class="veil"></div>
+  <div class="ui">
+    <nav>
+      <span class="brand">CHEMETIL</span>
+      <span class="links">
+        <a href="#laboratorio" data-i18n="nav_lab">Laboratório</a>
+        <a href="#acabamentos" data-i18n="nav_fin">Acabamentos</a>
+        <a href="#atelie" data-i18n="nav_atelier">Ateliê</a>
+        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+        <span class="langs">
+          <button class="lang on" data-lang="pt">PT</button><i>·</i><button class="lang" data-lang="en">EN</button><i>·</i><button class="lang" data-lang="es">ES</button>
+        </span>
+      </span>
+    </nav>
+    <div class="hero-core">
+      <div class="eyebrow" data-i18n="eyebrow">Engenharia de superfícies</div>
+      <div class="wordmark">
+        <span class="t hero-stroke">CHEMETIL</span>
+        <span class="t hero-fill" aria-hidden="true">CHEMETIL</span>
+        <span class="bond b12" aria-hidden="true"></span>
+        <span class="bond b9" aria-hidden="true"></span>
+        <span class="bond b6" aria-hidden="true"></span>
+        <span class="m-anchor a12" aria-hidden="true"><span class="hM">H</span></span>
+        <span class="m-anchor a9" aria-hidden="true"><span class="hM">H</span></span>
+        <span class="m-anchor a6" aria-hidden="true"><span class="hM">H</span></span>
+      </div>
+      <div class="tagline" data-i18n="tagline">Acabamentos que são arte.</div>
+      <p class="sub" data-i18n="hero_sub">Diagnóstico de banhos galvânicos, formulação e química técnica — por trás dos detalhes que a moda usa há décadas.</p>
+      <div class="cta-row"><a class="cta" href="#contacto" data-i18n="cta_hero">Falar com o laboratório</a></div>
+    </div>
+    <div class="finishes">
+      <div class="hint" data-i18n="fin_hint">Escolha o acabamento — o metal responde</div>
+      <div class="fin-row">
+        <button class="fin on" data-f="ouro" data-i18n="f_gold">Ouro</button>
+        <button class="fin" data-f="niquel" data-i18n="f_nickel">Níquel</button>
+        <button class="fin" data-f="cromo" data-i18n="f_chrome">Cromo</button>
+        <button class="fin" data-f="zinco" data-i18n="f_zinc">Zinco</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="lab" id="laboratorio">
+  <div class="inner">
+    <div class="sec-eyebrow" data-i18n="lab_eyebrow">O laboratório</div>
+    <h2 data-i18n="lab_title">O banho galvânico é um organismo vivo.</h2>
+    <p class="sec-sub" data-i18n="lab_sub">Nós mantemo-lo saudável — antes que a linha pare.</p>
+    <div class="cards reveal">
+      <div class="card">
+        <div class="k" data-i18n="lab_c1_k">Diagnóstico de banhos</div>
+        <div class="readout"><span class="v">pH 4.2</span><span class="s">55 °C · 2.4 A/dm²</span></div>
+        <p data-i18n="lab_c1_v">Análise ao estado do banho — pH, temperatura, densidade de corrente, contaminações — e correcção antes que o defeito chegue à peça.</p>
+      </div>
+      <div class="card">
+        <div class="k" data-i18n="lab_c2_k">Formulação &amp; correcção</div>
+        <div class="readout"><span class="v">±0.1</span><span class="s" data-i18n="lab_c2_s">tolerância de trabalho</span></div>
+        <p data-i18n="lab_c2_v">Ajustes e aditivos que devolvem ao banho o seu comportamento de referência, com registo do antes e depois.</p>
+      </div>
+      <div class="card">
+        <div class="k" data-i18n="lab_c3_k">Fornecimento técnico</div>
+        <div class="readout"><span class="v">CH₃</span><span class="s" data-i18n="lab_c3_s">química certa, hora certa</span></div>
+        <p data-i18n="lab_c3_v">A química certa, na concentração certa, quando é precisa — com ficha técnica e de segurança.</p>
+      </div>
+      <div class="card">
+        <div class="k" data-i18n="lab_c4_k">Apoio contínuo</div>
+        <div class="readout"><span class="v">24h</span><span class="s" data-i18n="lab_c4_s">resposta técnica</span></div>
+        <p data-i18n="lab_c4_v">Resposta técnica a quem produz. Sem paragens, sem surpresas — tranquilidade para a sua linha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="acabamentos">
+  <div class="inner">
+    <div class="sec-eyebrow" data-i18n="gal_eyebrow">Galeria de acabamentos</div>
+    <h2 data-i18n="gal_title">Cada acabamento é uma obra.</h2>
+    <p class="sec-sub" data-i18n="gal_sub">Zíperes, botões, fivelas — os detalhes que assinam uma peça.</p>
+    <div class="works reveal">
+      <div class="work ouro">
+        <div class="swatch"></div>
+        <div class="label">
+          <div class="name" data-i18n="w1_n">Ouro</div>
+          <p data-i18n="w1_d">O clássico absoluto. Deposição uniforme, tom controlado ao detalhe.</p>
+          <div class="app" data-i18n="w1_a">Botões · zíperes · bijutaria</div>
+        </div>
+      </div>
+      <div class="work niquel">
+        <div class="swatch"></div>
+        <div class="label">
+          <div class="name" data-i18n="w2_n">Níquel</div>
+          <p data-i18n="w2_d">O trabalho invisível: a base de quase tudo, com brilho técnico e nivelamento.</p>
+          <div class="app" data-i18n="w2_a">Camada de base · barreira</div>
+        </div>
+      </div>
+      <div class="work cromo">
+        <div class="swatch"></div>
+        <div class="label">
+          <div class="name" data-i18n="w3_n">Cromo</div>
+          <p data-i18n="w3_d">Espelho frio, dureza máxima. O acabamento que não perdoa banhos mal afinados.</p>
+          <div class="app" data-i18n="w3_a">Fivelas · acessórios premium</div>
+        </div>
+      </div>
+      <div class="work zinco">
+        <div class="swatch"></div>
+        <div class="label">
+          <div class="name" data-i18n="w4_n">Zinco</div>
+          <p data-i18n="w4_d">Protecção honesta para o metal que trabalha, com passivações à medida.</p>
+          <div class="app" data-i18n="w4_a">Componentes técnicos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="atelier" id="atelie">
+  <div class="inner narrow reveal">
+    <div class="sec-eyebrow" data-i18n="at_eyebrow">O ateliê</div>
+    <h2 data-i18n="at_title">Décadas dentro do banho.</h2>
+    <p class="editorial" data-i18n="at_p1">Há décadas que a Chemetil vive dentro dos banhos galvânicos. O saber de uma vida — fórmulas, diagnósticos, correcções feitas ao ouvido — ao serviço de quem fabrica os detalhes que a moda usa.</p>
+    <p class="editorial" data-i18n="at_p2">Hoje, a próxima geração junta a esse saber as ferramentas do próximo século. A química é a mesma; a precisão nunca foi tanta.</p>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="inner narrow reveal">
+    <div class="sec-eyebrow" data-i18n="ct_eyebrow">Contacto</div>
+    <h2 data-i18n="ct_title">Fale-nos do seu banho.</h2>
+    <p class="sec-sub" data-i18n="ct_sub">Um acabamento a afinar, um banho instável, um problema técnico — respondemos.</p>
+    <div class="cta-row"><a class="cta big" href="mailto:chemetil@gmail.com">chemetil@gmail.com</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner foot">
+    <span class="fmark">C<span class="fh">H₃</span>EMETIL</span>
+    <span class="fnote"><span data-i18n="ft_line">Engenharia de superfícies</span> · Portugal</span>
+    <span class="fcopy">© <span id="year"></span> Chemetil</span>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/main.js"></script>
+</body>
+</html>
