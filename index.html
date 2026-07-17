@@ -158,7 +158,20 @@
     <div class="sec-eyebrow" data-i18n="ct_eyebrow">Contacto</div>
     <h2 data-i18n="ct_title">Fale-nos do seu banho.</h2>
     <p class="sec-sub" data-i18n="ct_sub">Um acabamento a afinar, um banho instável, uma auditoria à porta — respondemos.</p>
-    <div class="cta-row"><a class="cta big" href="mailto:chemetil@gmail.com">chemetil@gmail.com</a></div>
+    <form id="cform" class="cform" novalidate>
+      <div class="frow">
+        <label><span data-i18n="ct_name">Nome</span><input name="name" required></label>
+        <label><span data-i18n="ct_company">Empresa</span><input name="company"></label>
+      </div>
+      <label><span data-i18n="ct_email">O seu email</span><input type="email" name="email" required></label>
+      <label><span data-i18n="ct_msg">Mensagem</span><textarea name="message" rows="4" required></textarea></label>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cta-row">
+        <button class="cta" type="submit" data-i18n="ct_send">Enviar ao laboratório</button>
+        <a class="cta ghost" id="mailbtn" href="#" data-i18n="ct_alt">Abrir no seu email</a>
+      </div>
+      <p class="fmsg" id="fmsg" role="status"></p>
+    </form>
   </div>
 </section>
 

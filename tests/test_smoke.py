@@ -18,7 +18,8 @@ def test_structure():
 def test_html_essentials():
     html = read("index.html")
     assert "CHEMETIL" in html
-    assert "chemetil@gmail.com" in html
+    assert "chemetil@gmail.com" not in html  # endereço montado em JS, invisível a scrapers
+    assert 'id="cform"' in html
     assert 'id="gl"' in html  # canvas do shader
     for anchor in ("laboratorio", "acabamentos", "atelie", "contacto"):
         assert f'id="{anchor}"' in html, f"falta secção #{anchor}"

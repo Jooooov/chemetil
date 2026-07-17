@@ -24,6 +24,37 @@
   if (urlLang && I18N[urlLang]) applyLang(urlLang);
   else if (saved && I18N[saved]) applyLang(saved);
 
+  /* ---------- contacto (endereço montado em JS — invisível a scrapers) ---------- */
+  var ADDR = ['chemetil', 'gmail.com'].join('@');
+  var mailbtn = document.getElementById('mailbtn');
+  if (mailbtn) mailbtn.addEventListener('click', function (ev) {
+    ev.preventDefault();
+    location.href = 'mailto:' + ADDR;
+  });
+  var cform = document.getElementById('cform');
+  var fmsg = document.getElementById('fmsg');
+  var FMSG = {
+    pt: { ok: 'Mensagem enviada. Respondemos em breve.', err: 'Não foi possível enviar — use o botão "Abrir no seu email".', req: 'Preencha nome, email e mensagem.' },
+    en: { ok: 'Message sent. We will reply shortly.', err: 'Could not send — use the "Open in your email" button.', req: 'Please fill in name, email and message.' },
+    es: { ok: 'Mensaje enviado. Respondemos en breve.', err: 'No se pudo enviar — use el botón "Abrir en su email".', req: 'Rellene nombre, email y mensaje.' }
+  };
+  if (cform) cform.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var m = FMSG[document.documentElement.lang] || FMSG.pt;
+    var f = new FormData(cform);
+    if (!f.get('name') || !f.get('email') || !f.get('message')) { fmsg.textContent = m.req; return; }
+    if (f.get('_honey')) return;
+    fmsg.textContent = '…';
+    fetch('https://formsubmit.co/ajax/' + ADDR, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: f
+    }).then(function (r) { return r.json(); }).then(function (j) {
+      fmsg.textContent = (j && (j.success === 'true' || j.success === true)) ? m.ok : m.err;
+      if (j && (j.success === 'true' || j.success === true)) cform.reset();
+    }).catch(function () { fmsg.textContent = m.err; });
+  });
+
   /* ---------- year ---------- */
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());

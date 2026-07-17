@@ -130,6 +130,17 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 600; letter-spacing: -.01
 
 /* Contacto */
 .contact { text-align: center; }
+.cform { margin-top: 40px; text-align: left; }
+.cform .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cform label { display: block; margin-bottom: 18px; }
+.cform label span { display: block; font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+.cform input, .cform textarea { width: 100%; background: var(--bg2); border: 1px solid var(--line); color: var(--ink); font: inherit; font-size: 15px; padding: 12px 14px; transition: border-color .3s; resize: vertical; }
+.cform input:focus, .cform textarea:focus { outline: none; border-color: var(--m-mid); }
+.cform .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.cta.ghost { border-color: rgba(235,230,218,.3); color: var(--ink-soft); }
+.cta.ghost:hover { background: transparent; border-color: var(--m-hi); color: var(--m-hi); }
+.fmsg { text-align: center; margin-top: 18px; font-size: 14px; color: var(--m-mid); min-height: 1.4em; }
+@media (max-width: 560px) { .cform .frow { grid-template-columns: 1fr; gap: 0; } }
 
 /* Footer */
 footer { border-top: 1px solid var(--line); padding: 34px 0; }

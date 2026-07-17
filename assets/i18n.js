@@ -35,6 +35,8 @@ const I18N = {
     ct_eyebrow: "Contacto",
     ct_title: "Fale-nos do seu banho.",
     ct_sub: "Um acabamento a afinar, um banho instável, uma auditoria à porta — respondemos.",
+    ct_name: "Nome", ct_company: "Empresa", ct_email: "O seu email", ct_msg: "Mensagem",
+    ct_send: "Enviar ao laboratório", ct_alt: "Abrir no seu email",
     ft_line: "Engenharia de superfícies"
   },
   en: {
@@ -72,6 +74,8 @@ const I18N = {
     ct_eyebrow: "Contact",
     ct_title: "Tell us about your bath.",
     ct_sub: "A finish to fine-tune, an unstable bath, an audit at the door — we answer.",
+    ct_name: "Name", ct_company: "Company", ct_email: "Your email", ct_msg: "Message",
+    ct_send: "Send to the laboratory", ct_alt: "Open in your email",
     ft_line: "Surface engineering"
   },
   es: {
@@ -109,6 +113,8 @@ const I18N = {
     ct_eyebrow: "Contacto",
     ct_title: "Háblenos de su baño.",
     ct_sub: "Un acabado por afinar, un baño inestable, una auditoría en la puerta — respondemos.",
+    ct_name: "Nombre", ct_company: "Empresa", ct_email: "Su email", ct_msg: "Mensaje",
+    ct_send: "Enviar al laboratorio", ct_alt: "Abrir en su email",
     ft_line: "Ingeniería de superficies"
   }
 };
