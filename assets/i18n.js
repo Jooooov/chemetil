@@ -2,7 +2,7 @@
 const I18N = {
   pt: {
     nav_lab: "Laboratório", nav_fin: "Acabamentos", nav_atelier: "Ateliê", nav_contact: "Contacto",
-    eyebrow: "Engenharia de superfícies",
+    eyebrow: "Galvanoplastia · Engenharia de superfícies",
     tagline: "Acabamentos que são arte.",
     hero_sub: "Diagnóstico de banhos galvânicos, correcção doseada e química técnica — há mais de 30 anos por trás dos detalhes que a moda usa.",
     cta_hero: "Fale connosco",
@@ -40,11 +40,11 @@ const I18N = {
     ct_sub: "Um acabamento a afinar, um banho instável, uma auditoria à porta — respondemos.",
     ct_name: "Nome", ct_company: "Empresa", ct_email: "O seu email", ct_msg: "Mensagem",
     ct_send: "Enviar mensagem", ct_alt: "Abrir no seu email",
-    ft_line: "Engenharia de superfícies"
+    ft_line: "Galvanoplastia · Galvanotecnia · Engenharia de superfícies"
   },
   en: {
     nav_lab: "Laboratory", nav_fin: "Finishes", nav_atelier: "Atelier", nav_contact: "Contact",
-    eyebrow: "Surface engineering",
+    eyebrow: "Electroplating · Surface engineering",
     tagline: "Finishes that are art.",
     hero_sub: "Electroplating bath diagnostics, pre-dosed correction and technical chemistry — behind the details fashion has worn for over 30 years.",
     cta_hero: "Talk to us",
@@ -82,11 +82,11 @@ const I18N = {
     ct_sub: "A finish to fine-tune, an unstable bath, an audit at the door — we answer.",
     ct_name: "Name", ct_company: "Company", ct_email: "Your email", ct_msg: "Message",
     ct_send: "Send message", ct_alt: "Open in your email",
-    ft_line: "Surface engineering"
+    ft_line: "Electroplating · Surface finishing · Metal plating"
   },
   es: {
     nav_lab: "Laboratorio", nav_fin: "Acabados", nav_atelier: "Taller", nav_contact: "Contacto",
-    eyebrow: "Ingeniería de superficies",
+    eyebrow: "Galvanotecnia · Ingeniería de superficies",
     tagline: "Acabados que son arte.",
     hero_sub: "Diagnóstico de baños galvánicos, corrección dosificada y química técnica — más de 30 años detrás de los detalles que usa la moda.",
     cta_hero: "Hable con nosotros",
@@ -124,6 +124,6 @@ const I18N = {
     ct_sub: "Un acabado por afinar, un baño inestable, una auditoría en la puerta — respondemos.",
     ct_name: "Nombre", ct_company: "Empresa", ct_email: "Su email", ct_msg: "Mensaje",
     ct_send: "Enviar mensaje", ct_alt: "Abrir en su email",
-    ft_line: "Ingeniería de superficies"
+    ft_line: "Galvanotecnia · Recubrimientos metálicos · Ingeniería de superficies"
   }
 };
