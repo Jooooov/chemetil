@@ -150,8 +150,12 @@ h2 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 600; letter-spacing: -.01
 /* Footer */
 footer { border-top: 1px solid var(--line); padding: 34px 0; }
 .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.fmark { font-weight: 700; letter-spacing: .3em; font-size: 13px; }
-.fmark .fh { color: var(--m-mid); }
+/* wordmark do hero em miniatura — reutiliza .bond/.m-anchor/.hM */
+.fmark.mini { font-size: 16px; font-weight: 700; margin: .3em .2em .3em .6em; filter: none; }
+.fmark.mini .hM { font-size: .5em; }
+.fmark.mini .m-anchor, .fmark.mini .bond { animation: none; opacity: 1; }
+.fmark.mini .bond.b12, .fmark.mini .bond.b6 { width: 1px; }
+.fmark.mini .bond.b9 { height: 1px; }
 .fnote, .fcopy { font-size: 12px; color: var(--ink-soft); letter-spacing: .08em; }
 
 @media (max-width: 720px) {
