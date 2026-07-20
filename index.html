@@ -1,15 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chemetil — Química técnica para acabamentos metálicos</title>
-<meta name="description" content="Diagnóstico de banhos galvânicos e especialidades químicas para fabricantes de acessórios — fechos, botões, fivelas. Conformidade REACH, apoio técnico directo, Portugal.">
-<meta property="og:title" content="Chemetil — Química técnica para acabamentos metálicos">
-<meta property="og:description" content="Os seus clientes compram peças perfeitas. Os nossos compram tranquilidade técnica.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
-<style>*{margin:0;padding:0;box-sizing:border-box}img{max-width:100%}</style>
+<title>Chemetil — Galvanoplastia e Engenharia de Superfícies</title>
+<meta name="description" content="Galvanoplastia e galvanotecnia em Portugal: diagnóstico de banhos galvânicos, correcção doseada e química técnica desde 2007. Ouro, cobre, níquel, crómio, zinco, oxidações — acabamentos que são arte.">
+<meta name="keywords" content="galvanoplastia, galvanotecnia, electroplating, banhos galvânicos, tratamento de superfícies, cromagem, niquelagem, douramento, zincagem, oxidações, gun metal, bronze branco, química industrial, Portugal">
+<meta property="og:title" content="Chemetil — Galvanoplastia e Engenharia de Superfícies">
+<meta property="og:description" content="Diagnóstico de banhos galvânicos, correcção doseada e química técnica há mais de 30 anos. Acabamentos que são arte.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Chemetil",
+  "description": "Empresa portuguesa de galvanoplastia e galvanotecnia: diagnóstico de banhos galvânicos, correcção doseada e fornecimento de química técnica para acabamentos de metal — moda, bijutaria, ferragens, mobiliário e iluminação.",
+  "foundingDate": "2007",
+  "areaServed": ["Portugal", "España"],
+  "knowsAbout": ["galvanoplastia", "galvanotecnia", "electroplating", "banhos galvânicos", "tratamento de superfícies", "cromagem", "niquelagem", "douramento", "zincagem", "oxidações de metal", "gun metal", "bronze branco", "desengordurantes industriais", "REACH"]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚗️</text></svg>">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+
+<div class="art" id="hero">
+  <canvas id="gl"></canvas>
+  <div class="veil"></div>
+  <div class="ui">
+    <nav>
+      <span class="brand">CHEMETIL</span>
+      <span class="links">
+        <a href="#laboratorio" data-i18n="nav_lab">Laboratório</a>
+        <a href="#acabamentos" data-i18n="nav_fin">Acabamentos</a>
+        <a href="#atelie" data-i18n="nav_atelier">Ateliê</a>
+        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+        <span class="langs">
+          <button class="lang on" data-lang="pt">PT</button><i>·</i><button class="lang" data-lang="en">EN</button><i>·</i><button class="lang" data-lang="es">ES</button>
+        </span>
+      </span>
+    </nav>
+    <div class="hero-core">
+      <div class="eyebrow" data-i18n="eyebrow">Galvanoplastia · Engenharia de superfícies</div>
+      <div class="wordmark">
+        <span class="t hero-stroke">CHEMETIL</span>
+        <span class="t hero-fill" aria-hidden="true">CHEMETIL</span>
+        <span class="bond b12" aria-hidden="true"></span>
+        <span class="bond b9" aria-hidden="true"></span>
+        <span class="bond b6" aria-hidden="true"></span>
+        <span class="m-anchor a12" aria-hidden="true"><span class="hM">H</span></span>
+        <span class="m-anchor a9" aria-hidden="true"><span class="hM">H</span></span>
+        <span class="m-anchor a6" aria-hidden="true"><span class="hM">H</span></span>
+      </div>
+      <div class="tagline" data-i18n="tagline">Acabamentos que são arte.</div>
+      <p class="sub" data-i18n="hero_sub">Diagnóstico de banhos galvânicos, correcção doseada e química técnica — desde 2007 por trás dos detalhes que a moda usa.</p>
+      <div class="cta-row"><a class="cta" href="#contacto" data-i18n="cta_hero">Fale connosco</a></div>
+    </div>
+    <div class="finishes">
+      <div class="hint" data-i18n="fin_hint">Escolha o acabamento — o metal responde</div>
+      <div class="fin-row">
+        <button class="fin on" data-f="ouro" data-i18n="f_gold">Ouro</button>
+        <button class="fin" data-f="cobre" data-i18n="f_copper">Cobre</button>
+        <button class="fin" data-f="bronze" data-i18n="f_bronze">Bronze</button>
+        <button class="fin" data-f="niquel" data-i18n="f_nickel">Níquel</button>
+        <button class="fin" data-f="cromo" data-i18n="f_chrome">Crómio</button>
+        <button class="fin" data-f="zinco" data-i18n="f_zinc">Zinco</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="lab" id="laboratorio">
+  <div class="inner">
+    <div class="sec-eyebrow" data-i18n="lab_eyebrow">O laboratório</div>
+    <h2 data-i18n="lab_title">O banho galvânico é um organismo vivo.</h2>
+    <p class="sec-sub" data-i18n="lab_sub">Nós mantemo-lo saudável — antes que a linha pare.</p>
+    <div class="cards reveal">
+      <div class="card">
+        <div class="k" data-i18n="lab_c1_k">Diagnóstico de banhos</div>
+        <div class="readout"><span class="v">pH 4.2</span><span class="s">55 °C · 2.4 A/dm²</span></div>
+        <p data-i18n="lab_c1_v">Análise ao estado do banho — pH, temperatura, densidade de corrente, contaminações — e correcção antes que o defeito chegue à peça.</p>
+      </div>
+      <div class="card">
+        <div class="k" data-i18n="lab_c2_k">Correcção doseada</div>
+        <div class="readout"><span class="v">±0.1</span><span class="s" data-i18n="lab_c2_s">pronta a adicionar</span></div>
+        <p data-i18n="lab_c2_v">Analisamos o banho, diagnosticamos o problema e entregamos a solução já doseada, pronta a adicionar — sem adivinhas.</p>
+      </div>
+      <div class="card">
+        <div class="k" data-i18n="lab_c3_k">Fornecimento técnico</div>
+        <div class="readout"><span class="v">CH₃</span><span class="s" data-i18n="lab_c3_s">química certa, hora certa</span></div>
+        <p data-i18n="lab_c3_v">Todos os acabamentos do catálogo — clássicos e de especialidade — entregues prontos a usar, com documentação em dia para exportar sem sustos.</p>
+      </div>
+      <div class="card">
+        <div class="k" data-i18n="lab_c4_k">Apoio contínuo</div>
+        <div class="readout"><span class="v">FAST</span><span class="s" data-i18n="lab_c4_s">resposta técnica</span></div>
+        <p data-i18n="lab_c4_v">Resposta técnica a quem produz. Sem paragens, sem surpresas — tranquilidade para a sua linha.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="acabamentos">
+  <div class="inner">
+    <div class="sec-eyebrow" data-i18n="gal_eyebrow">Galeria de acabamentos</div>
+    <h2 data-i18n="gal_title">Cada acabamento é uma obra.</h2>
+    <p class="sec-sub" data-i18n="gal_sub">Moda, bijutaria, ferragens, mobiliário, iluminação — os detalhes que assinam uma peça.</p>
+    <div class="works reveal">
+      <div class="work ouro">
+        <canvas class="swatch3d" data-f="ouro" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w1_n">Ouro</div>
+          <p data-i18n="w1_d">O clássico absoluto. Deposição uniforme, tom controlado ao detalhe.</p>
+          <div class="app" data-i18n="w1_a">Botões · fechos · bijutaria</div>
+        </div>
+      </div>
+      <div class="work cobre">
+        <canvas class="swatch3d" data-f="cobre" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w5_n">Cobre</div>
+          <p data-i18n="w5_d">O metal vivo. Quente, condutor, a base nobre de quase todos os acabamentos — e lindo por direito próprio.</p>
+          <div class="app" data-i18n="w5_a">Subcamada nobre · decorativo</div>
+        </div>
+      </div>
+      <div class="work bronze">
+        <canvas class="swatch3d" data-f="bronze" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w6_n">Bronze</div>
+          <p data-i18n="w6_d">Calor antigo, tom de época. O acabamento que dá alma a ferragens e peças com história.</p>
+          <div class="app" data-i18n="w6_a">Ferragens · moda vintage</div>
+        </div>
+      </div>
+      <div class="work niquel">
+        <canvas class="swatch3d" data-f="niquel" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w2_n">Níquel</div>
+          <p data-i18n="w2_d">O trabalho invisível: a base de quase tudo, com brilho técnico e nivelamento.</p>
+          <div class="app" data-i18n="w2_a">Camada de base · barreira</div>
+        </div>
+      </div>
+      <div class="work cromo">
+        <canvas class="swatch3d" data-f="cromo" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w3_n">Crómio</div>
+          <p data-i18n="w3_d">Espelho frio, dureza máxima. O acabamento que não perdoa banhos mal afinados.</p>
+          <div class="app" data-i18n="w3_a">Fivelas · acessórios premium</div>
+        </div>
+      </div>
+      <div class="work zinco">
+        <canvas class="swatch3d" data-f="zinco" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w4_n">Zinco</div>
+          <p data-i18n="w4_d">Protecção honesta para o metal que trabalha, com passivações à medida.</p>
+          <div class="app" data-i18n="w4_a">Componentes técnicos</div>
+        </div>
+      </div>
+      <div class="work gunmetal">
+        <canvas class="swatch3d" data-f="gunmetal" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w7_n">Gun Metal</div>
+          <p data-i18n="w7_d">A especialidade têxtil. O cinza-arma profundo que assina fechos e ferragens de moda.</p>
+          <div class="app" data-i18n="w7_a">Especialidade têxtil · fechos</div>
+        </div>
+      </div>
+      <div class="work brancobronze">
+        <canvas class="swatch3d" data-f="brancobronze" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w8_n">Bronze Branco</div>
+          <p data-i18n="w8_d">O tom nobre entre a prata e o champanhe — elegância discreta para quem não quer brilho óbvio.</p>
+          <div class="app" data-i18n="w8_a">Bijutaria · botões</div>
+        </div>
+      </div>
+      <div class="work oxid">
+        <canvas class="swatch3d" data-f="oxid" width="300" height="300"></canvas>
+        <div class="label">
+          <div class="name" data-i18n="w9_n">Oxidações</div>
+          <p data-i18n="w9_d">Dos melhores artigos da casa. Patinas e oxidações que dão profundidade, contraste e idade nobre ao metal — do preto ao castanho envelhecido.</p>
+          <div class="app" data-i18n="w9_a">Especialidade da casa · patinas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="atelier" id="atelie">
+  <div class="inner narrow reveal">
+    <div class="sec-eyebrow" data-i18n="at_eyebrow">O ateliê</div>
+    <h2 data-i18n="at_title">Décadas dentro do banho.</h2>
+    <p class="editorial" data-i18n="at_p1">Desde 2007 que a Chemetil vive dentro dos banhos galvânicos. O saber de quase duas décadas — fórmulas, diagnósticos, correcções feitas ao ouvido — ao serviço de quem fabrica os detalhes que a moda usa.</p>
+    <p class="editorial" data-i18n="at_p2">Hoje, a próxima geração junta a esse saber as ferramentas do próximo século. A química é a mesma; a precisão nunca foi tanta.</p>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="inner narrow reveal">
+    <div class="sec-eyebrow" data-i18n="ct_eyebrow">Contacto</div>
+    <h2 data-i18n="ct_title">Fale-nos do seu banho.</h2>
+    <p class="sec-sub" data-i18n="ct_sub">Um acabamento a afinar, um banho instável, uma auditoria à porta — respondemos.</p>
+    <form id="cform" class="cform" novalidate>
+      <div class="frow">
+        <label><span data-i18n="ct_name">Nome</span><input name="name" required></label>
+        <label><span data-i18n="ct_company">Empresa</span><input name="company"></label>
+      </div>
+      <label><span data-i18n="ct_email">O seu email</span><input type="email" name="email" required></label>
+      <label><span data-i18n="ct_msg">Mensagem</span><textarea name="message" rows="4" required></textarea></label>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cta-row">
+        <button class="cta" type="submit" data-i18n="ct_send">Enviar mensagem</button>
+        <a class="cta ghost" id="mailbtn" href="#" data-i18n="ct_alt">Abrir no seu email</a>
+      </div>
+      <p class="fmsg" id="fmsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="inner foot">
+    <span class="fmark">C<span class="fh">H₃</span>EMETIL</span>
+    <span class="fnote"><span data-i18n="ft_line">Galvanoplastia · Galvanotecnia · Engenharia de superfícies</span> · Portugal</span>
+    <span class="fcopy">© <span id="year"></span> Chemetil</span>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/main.js"></script>
 </body>
 </html>
