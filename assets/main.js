@@ -168,12 +168,18 @@
 
   var reducedFin = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hEls = document.querySelectorAll('.hero-core .m-anchor, .hero-core .bond');
+  var fillEl = document.querySelector('.hero-core .hero-fill');
   function replayH() {
     if (reducedFin) return;
+    if (fillEl) {
+      fillEl.style.animation = 'none';
+      void fillEl.offsetWidth;
+      fillEl.style.animation = 'plate 1.6s cubic-bezier(.55,.06,.28,1) .1s forwards, sheen 7s linear 1.8s infinite';
+    }
     hEls.forEach(function (el) {
       el.style.animation = 'none';
       void el.offsetWidth;
-      el.style.animation = 'methyl-in 1.2s ease .3s forwards';
+      el.style.animation = 'methyl-in 1.2s ease 1.4s forwards';
     });
   }
 
