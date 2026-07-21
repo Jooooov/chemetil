@@ -166,15 +166,42 @@
   var cur = { lo: FIN.ouro.lo.slice(), mid: FIN.ouro.mid.slice(), hi: FIN.ouro.hi.slice() };
   var tgt = FIN.ouro;
 
+  var reducedFin = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hEls = document.querySelectorAll('.hero-core .m-anchor, .hero-core .bond');
+  function replayH() {
+    if (reducedFin) return;
+    hEls.forEach(function (el) {
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = 'methyl-in 1.2s ease .3s forwards';
+    });
+  }
+
+  function applyFinish(key) {
+    document.querySelectorAll('.fin').forEach(function (x) { x.classList.toggle('on', x.dataset.f === key); });
+    tgt = FIN[key];
+    var root = document.documentElement.style;
+    root.setProperty('--m-dark', tgt.css[0]);
+    root.setProperty('--m-mid', tgt.css[1]);
+    root.setProperty('--m-hi', tgt.css[2]);
+    replayH();
+  }
+
+  /* auto-play: roda os acabamentos até o utilizador escolher um */
+  var ORDER = ['ouro', 'cobre', 'bronze', 'niquel', 'cromo', 'zinco'];
+  var autoIdx = 0, autoTimer = null;
+  if (!reducedFin) {
+    autoTimer = setInterval(function () {
+      if (document.hidden) return;
+      autoIdx = (autoIdx + 1) % ORDER.length;
+      applyFinish(ORDER[autoIdx]);
+    }, 7000);
+  }
+
   document.querySelectorAll('.fin').forEach(function (b) {
     b.addEventListener('click', function () {
-      document.querySelectorAll('.fin').forEach(function (x) { x.classList.remove('on'); });
-      b.classList.add('on');
-      tgt = FIN[b.dataset.f];
-      var root = document.documentElement.style;
-      root.setProperty('--m-dark', tgt.css[0]);
-      root.setProperty('--m-mid', tgt.css[1]);
-      root.setProperty('--m-hi', tgt.css[2]);
+      if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+      applyFinish(b.dataset.f);
     });
   });
 
